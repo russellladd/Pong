@@ -5,14 +5,32 @@
       "idiom" : "iphone",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
+      "filename" : "LaunchImage@2x~iPhone.png",
+      "scale" : "2x"
+    },
+    {
+      "extent" : "full-screen",
+      "idiom" : "iphone",
+      "subtype" : "retina4",
+      "filename" : "LaunchImage@2x~iPhoneR4.png",
+      "minimum-system-version" : "7.0",
+      "orientation" : "portrait",
       "scale" : "2x"
     },
     {
       "orientation" : "portrait",
-      "idiom" : "iphone",
-      "subtype" : "retina4",
+      "idiom" : "ipad",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
+      "filename" : "LaunchImage~iPad.png",
+      "scale" : "1x"
+    },
+    {
+      "orientation" : "portrait",
+      "idiom" : "ipad",
+      "extent" : "full-screen",
+      "minimum-system-version" : "7.0",
+      "filename" : "LaunchImage@2x~iPad.png",
       "scale" : "2x"
     }
   ],

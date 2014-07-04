@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46B43D0D195FC6F4006F6FEC /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B43D0C195FC6F4006F6FEC /* iAd.framework */; };
+		46B43D141960466F006F6FEC /* Storyboard-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46B43D131960466F006F6FEC /* Storyboard-iPad.storyboard */; };
+		46B43D1A19608086006F6FEC /* PGColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B43D1919608086006F6FEC /* PGColorPickerView.m */; };
 		46FF4F7A195B6EE20098214F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FF4F79195B6EE20098214F /* Foundation.framework */; };
 		46FF4F7C195B6EE20098214F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FF4F7B195B6EE20098214F /* CoreGraphics.framework */; };
 		46FF4F7E195B6EE20098214F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FF4F7D195B6EE20098214F /* UIKit.framework */; };
@@ -14,10 +17,9 @@
 		46FF4F86195B6EE20098214F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 46FF4F84195B6EE20098214F /* InfoPlist.strings */; };
 		46FF4F88195B6EE20098214F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FF4F87195B6EE20098214F /* main.m */; };
 		46FF4F8C195B6EE20098214F /* PGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FF4F8B195B6EE20098214F /* PGAppDelegate.m */; };
-		46FF4F8F195B6EE20098214F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46FF4F8D195B6EE20098214F /* Main.storyboard */; };
-		46FF4F92195B6EE20098214F /* PGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FF4F91195B6EE20098214F /* PGViewController.m */; };
-		46FF4F95195B6EE20098214F /* PGMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FF4F94195B6EE20098214F /* PGMyScene.m */; };
-		46FF4F97195B6EE20098214F /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 46FF4F96195B6EE20098214F /* Spaceship.png */; };
+		46FF4F8F195B6EE20098214F /* Storyboard-iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46FF4F8D195B6EE20098214F /* Storyboard-iPhone.storyboard */; };
+		46FF4F92195B6EE20098214F /* PGBallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FF4F91195B6EE20098214F /* PGBallViewController.m */; };
+		46FF4F95195B6EE20098214F /* PGBallScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FF4F94195B6EE20098214F /* PGBallScene.m */; };
 		46FF4F99195B6EE20098214F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46FF4F98195B6EE20098214F /* Images.xcassets */; };
 		46FF4FA0195B6EE20098214F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FF4F9F195B6EE20098214F /* XCTest.framework */; };
 		46FF4FA1195B6EE20098214F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FF4F79195B6EE20098214F /* Foundation.framework */; };
@@ -37,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		46B43D0C195FC6F4006F6FEC /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		46B43D131960466F006F6FEC /* Storyboard-iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Storyboard-iPad.storyboard"; sourceTree = "<group>"; };
+		46B43D1819608086006F6FEC /* PGColorPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGColorPickerView.h; sourceTree = "<group>"; };
+		46B43D1919608086006F6FEC /* PGColorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGColorPickerView.m; sourceTree = "<group>"; };
 		46FF4F76195B6EE20098214F /* Pong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46FF4F79195B6EE20098214F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		46FF4F7B195B6EE20098214F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,12 +54,11 @@
 		46FF4F89195B6EE20098214F /* Pong-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pong-Prefix.pch"; sourceTree = "<group>"; };
 		46FF4F8A195B6EE20098214F /* PGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGAppDelegate.h; sourceTree = "<group>"; };
 		46FF4F8B195B6EE20098214F /* PGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PGAppDelegate.m; sourceTree = "<group>"; };
-		46FF4F8E195B6EE20098214F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		46FF4F90195B6EE20098214F /* PGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGViewController.h; sourceTree = "<group>"; };
-		46FF4F91195B6EE20098214F /* PGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PGViewController.m; sourceTree = "<group>"; };
-		46FF4F93195B6EE20098214F /* PGMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGMyScene.h; sourceTree = "<group>"; };
-		46FF4F94195B6EE20098214F /* PGMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PGMyScene.m; sourceTree = "<group>"; };
-		46FF4F96195B6EE20098214F /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		46FF4F8E195B6EE20098214F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Storyboard-iPhone.storyboard"; sourceTree = "<group>"; };
+		46FF4F90195B6EE20098214F /* PGBallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGBallViewController.h; sourceTree = "<group>"; };
+		46FF4F91195B6EE20098214F /* PGBallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PGBallViewController.m; sourceTree = "<group>"; };
+		46FF4F93195B6EE20098214F /* PGBallScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGBallScene.h; sourceTree = "<group>"; };
+		46FF4F94195B6EE20098214F /* PGBallScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PGBallScene.m; sourceTree = "<group>"; };
 		46FF4F98195B6EE20098214F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		46FF4F9E195B6EE20098214F /* PongTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PongTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46FF4F9F195B6EE20098214F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -67,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46B43D0D195FC6F4006F6FEC /* iAd.framework in Frameworks */,
 				46FF4F7C195B6EE20098214F /* CoreGraphics.framework in Frameworks */,
 				46FF4F7E195B6EE20098214F /* UIKit.framework in Frameworks */,
 				46FF4F80195B6EE20098214F /* SpriteKit.framework in Frameworks */,
@@ -109,6 +115,7 @@
 		46FF4F78195B6EE20098214F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				46B43D0C195FC6F4006F6FEC /* iAd.framework */,
 				46FF4F79195B6EE20098214F /* Foundation.framework */,
 				46FF4F7B195B6EE20098214F /* CoreGraphics.framework */,
 				46FF4F7D195B6EE20098214F /* UIKit.framework */,
@@ -123,12 +130,14 @@
 			children = (
 				46FF4F8A195B6EE20098214F /* PGAppDelegate.h */,
 				46FF4F8B195B6EE20098214F /* PGAppDelegate.m */,
-				46FF4F8D195B6EE20098214F /* Main.storyboard */,
-				46FF4F90195B6EE20098214F /* PGViewController.h */,
-				46FF4F91195B6EE20098214F /* PGViewController.m */,
-				46FF4F93195B6EE20098214F /* PGMyScene.h */,
-				46FF4F94195B6EE20098214F /* PGMyScene.m */,
-				46FF4F96195B6EE20098214F /* Spaceship.png */,
+				46FF4F8D195B6EE20098214F /* Storyboard-iPhone.storyboard */,
+				46B43D131960466F006F6FEC /* Storyboard-iPad.storyboard */,
+				46FF4F90195B6EE20098214F /* PGBallViewController.h */,
+				46FF4F91195B6EE20098214F /* PGBallViewController.m */,
+				46B43D1819608086006F6FEC /* PGColorPickerView.h */,
+				46B43D1919608086006F6FEC /* PGColorPickerView.m */,
+				46FF4F93195B6EE20098214F /* PGBallScene.h */,
+				46FF4F94195B6EE20098214F /* PGBallScene.m */,
 				46FF4F98195B6EE20098214F /* Images.xcassets */,
 				46FF4F82195B6EE20098214F /* Supporting Files */,
 			);
@@ -242,9 +251,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				46FF4F86195B6EE20098214F /* InfoPlist.strings in Resources */,
+				46B43D141960466F006F6FEC /* Storyboard-iPad.storyboard in Resources */,
 				46FF4F99195B6EE20098214F /* Images.xcassets in Resources */,
-				46FF4F97195B6EE20098214F /* Spaceship.png in Resources */,
-				46FF4F8F195B6EE20098214F /* Main.storyboard in Resources */,
+				46FF4F8F195B6EE20098214F /* Storyboard-iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,9 +273,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				46FF4F88195B6EE20098214F /* main.m in Sources */,
-				46FF4F95195B6EE20098214F /* PGMyScene.m in Sources */,
-				46FF4F92195B6EE20098214F /* PGViewController.m in Sources */,
+				46FF4F95195B6EE20098214F /* PGBallScene.m in Sources */,
+				46FF4F92195B6EE20098214F /* PGBallViewController.m in Sources */,
 				46FF4F8C195B6EE20098214F /* PGAppDelegate.m in Sources */,
+				46B43D1A19608086006F6FEC /* PGColorPickerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,12 +307,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		46FF4F8D195B6EE20098214F /* Main.storyboard */ = {
+		46FF4F8D195B6EE20098214F /* Storyboard-iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				46FF4F8E195B6EE20098214F /* Base */,
 			);
-			name = Main.storyboard;
+			name = "Storyboard-iPhone.storyboard";
 			sourceTree = "<group>";
 		};
 		46FF4FA8195B6EE20098214F /* InfoPlist.strings */ = {
@@ -394,8 +404,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pong/Pong-Prefix.pch";
 				INFOPLIST_FILE = "Pong/Pong-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -408,8 +420,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pong/Pong-Prefix.pch";
 				INFOPLIST_FILE = "Pong/Pong-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -473,6 +487,7 @@
 				46FF4FB1195B6EE20098214F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		46FF4FB2195B6EE20098214F /* Build configuration list for PBXNativeTarget "PongTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +496,7 @@
 				46FF4FB4195B6EE20098214F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
