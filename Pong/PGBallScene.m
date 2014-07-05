@@ -79,7 +79,9 @@ NSString *const PGBallSceneBallNodeName = @"ball";
             ball.position.x < self.size.width + self.ballRadius &&
             ball.position.y >= self.size.height + self.ballRadius) {
             
-            [self.delegate ballScene:self didLoseBallWithX:ball.position.x / self.size.width velocity:ball.physicsBody.velocity angularVelocity:ball.physicsBody.angularVelocity color:ball.color];
+            CGFloat x = (ball.position.x - self.ballRadius) / (self.size.width - 2 * self.ballRadius);
+            
+            [self.delegate ballScene:self didLoseBallWithX:x velocity:ball.physicsBody.velocity angularVelocity:ball.physicsBody.angularVelocity color:ball.color];
         }
         
         if (ball.position.x <= -self.ballRadius ||
@@ -104,7 +106,7 @@ NSString *const PGBallSceneBallNodeName = @"ball";
     }
 }
 
-#pragma mark - Loop
+#pragma mark - Scene physics body
 
 - (void)updateScenePhysicsBody
 {
@@ -130,7 +132,8 @@ NSString *const PGBallSceneBallNodeName = @"ball";
 
 - (void)dropLostBallWithX:(CGFloat)x velocity:(CGVector)v angularVelocity:(CGFloat)o color:(UIColor *)color
 {
-    CGPoint position = CGPointMake(self.size.width * (1.0 - x), self.size.height + self.ballRadius);
+    CGFloat invertedX = (self.size.width - 2 * self.ballRadius) * (1.0 - x) + self.ballRadius;
+    CGPoint position = CGPointMake(invertedX, self.size.height + self.ballRadius);
     CGVector invertedVelocity = CGVectorMake(-v.dx, -v.dy);
     
     [self createBallWithPosition:position velocity:invertedVelocity angularVelocity:o color:color];

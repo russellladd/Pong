@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		46B43D0D195FC6F4006F6FEC /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B43D0C195FC6F4006F6FEC /* iAd.framework */; };
 		46B43D141960466F006F6FEC /* Storyboard-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46B43D131960466F006F6FEC /* Storyboard-iPad.storyboard */; };
 		46B43D1A19608086006F6FEC /* PGColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B43D1919608086006F6FEC /* PGColorPickerView.m */; };
 		46FF4F7A195B6EE20098214F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FF4F79195B6EE20098214F /* Foundation.framework */; };
@@ -72,7 +71,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46B43D0D195FC6F4006F6FEC /* iAd.framework in Frameworks */,
 				46FF4F7C195B6EE20098214F /* CoreGraphics.framework in Frameworks */,
 				46FF4F7E195B6EE20098214F /* UIKit.framework in Frameworks */,
 				46FF4F80195B6EE20098214F /* SpriteKit.framework in Frameworks */,
