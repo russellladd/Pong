@@ -23,6 +23,8 @@ CGFloat const PGColorViewSideLengthShort = 44.0;
 
 @implementation PGColorPickerView
 
+#pragma mark - Object life cycle
+
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
@@ -128,6 +130,8 @@ CGFloat const PGColorViewSideLengthShort = 44.0;
     self.colorButtonConstraints = [colorButtonConstraints copy];
 }
 
+#pragma mark - Color
+
 - (void)setColor:(UIColor *)color
 {
     if (![_color isEqual:color]) {
@@ -143,6 +147,8 @@ CGFloat const PGColorViewSideLengthShort = 44.0;
     }
 }
 
+#pragma mark - Actions
+
 - (void)colorDropTouchUpInside:(UIButton *)colorDropButton
 {
     [self setExpanded:!self.expanded animated:YES];
@@ -156,6 +162,8 @@ CGFloat const PGColorViewSideLengthShort = 44.0;
     
     [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
+
+#pragma mark - Expansion
 
 - (void)setExpanded:(BOOL)expanded
 {
@@ -200,6 +208,8 @@ CGFloat const PGColorViewSideLengthShort = 44.0;
         } completion:NULL];
     }
 }
+
+#pragma mark - Layout
 
 - (CGSize)intrinsicContentSize
 {

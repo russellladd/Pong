@@ -15,7 +15,6 @@
 @property (nonatomic) BOOL expanded;
 
 - (void)setExpanded:(BOOL)expanded animated:(BOOL)animated;
-
 - (void)setExpanded:(BOOL)expanded animated:(BOOL)animated delay:(NSTimeInterval)delay animations:(void(^)(void))animations;
 
 @end

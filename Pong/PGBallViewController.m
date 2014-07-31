@@ -11,6 +11,8 @@
 #import "PGColorPickerView.h"
 #import "PGBallScene.h"
 
+@import SpriteKit;
+
 NSString *const PGBallViewControllerColorKey = @"com.GilbertLadd.PGBallViewControllerColor";
 
 @import MultipeerConnectivity;
