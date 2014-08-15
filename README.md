@@ -20,6 +20,6 @@ Two devices are better than one! But in case you’re suffering a shortage, here
 
 Pour has been finely tuned to provide the most enjoyable experience possible.
 
-Extremely realistic physics engine simulates both positional and rotational motion.
-Highly performant graphics engine renders perfectly smooth balls at 60 fps.
-Play with up to 150 balls on iPad. (You can’t even fit that many on iPhone!)
+- Extremely realistic physics engine simulates both positional and rotational motion.
+- Highly performant graphics engine renders perfectly smooth balls at 60 fps.
+- Play with up to 150 balls on iPad. (You can’t even fit that many on iPhone!)
