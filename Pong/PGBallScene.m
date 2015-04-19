@@ -81,7 +81,7 @@ NSString *const PGBallSceneBallNodeName = @"ball";
             
             CGFloat x = (ball.position.x - self.ballRadius) / (self.size.width - 2 * self.ballRadius);
             
-            [self.delegate ballScene:self didLoseBallWithX:x velocity:ball.physicsBody.velocity angularVelocity:ball.physicsBody.angularVelocity color:ball.color];
+            [self.ballDelegate ballScene:self didLoseBallWithX:x velocity:ball.physicsBody.velocity angularVelocity:ball.physicsBody.angularVelocity color:ball.color];
         }
         
         if (ball.position.x <= -self.ballRadius ||

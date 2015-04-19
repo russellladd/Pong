@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="RMa-na-h6R">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RMa-na-h6R">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
         <!--Ball View Controller-->
@@ -13,12 +13,11 @@
                         <viewControllerLayoutGuide type="bottom" id="bhR-oD-E9f"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BCb-lX-Euc" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccV-W5-GMc">
-                                <rect key="frame" x="702" y="0.0" width="66" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="534" y="0.0" width="66" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="KJd-S5-njI"/>
                                     <constraint firstAttribute="width" constant="66" id="aTi-5p-SaA"/>
@@ -32,37 +31,37 @@
                             </button>
                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="66" placeholderIntrinsicHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="tyd-rb-naw" customClass="PGColorPickerView">
                                 <rect key="frame" x="0.0" y="0.0" width="66" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="colorPickerViewValueChanged:" destination="RMa-na-h6R" eventType="valueChanged" id="HLI-iF-SDd"/>
                                 </connections>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="06M-LE-HUM">
+                                <rect key="frame" x="557" y="23" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="06M-LE-HUM" firstAttribute="centerX" secondItem="ccV-W5-GMc" secondAttribute="centerX" id="DgF-Ta-xIZ"/>
                             <constraint firstAttribute="trailing" secondItem="ccV-W5-GMc" secondAttribute="trailing" id="LcN-Fm-l5T"/>
                             <constraint firstItem="ccV-W5-GMc" firstAttribute="top" secondItem="BCb-lX-Euc" secondAttribute="top" id="LdY-Ou-j6X"/>
                             <constraint firstItem="tyd-rb-naw" firstAttribute="leading" secondItem="BCb-lX-Euc" secondAttribute="leading" id="SBk-2q-lx1"/>
+                            <constraint firstItem="06M-LE-HUM" firstAttribute="centerY" secondItem="ccV-W5-GMc" secondAttribute="centerY" id="i8A-L8-AYh"/>
                             <constraint firstItem="tyd-rb-naw" firstAttribute="top" secondItem="BCb-lX-Euc" secondAttribute="top" id="yAX-b9-YXj"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addFriendButton" destination="ccV-W5-GMc" id="59H-q4-SP4"/>
                         <outlet property="colorPickerView" destination="tyd-rb-naw" id="LlT-uh-7fQ"/>
+                        <outlet property="connectingIndicator" destination="06M-LE-HUM" id="5yy-vv-ljx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9qL-ma-i0o" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="196" y="64"/>
+            <point key="canvasLocation" x="153.125" y="37.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="AddFriend" width="22" height="22"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
-    </simulatedMetricsContainer>
 </document>

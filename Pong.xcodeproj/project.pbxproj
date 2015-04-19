@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		46B43D141960466F006F6FEC /* Storyboard-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46B43D131960466F006F6FEC /* Storyboard-iPad.storyboard */; };
+		46AC9B121AE2FB6900BD480D /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46AC9B111AE2FB6900BD480D /* Launch Screen.xib */; };
+		46B43D141960466F006F6FEC /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46B43D131960466F006F6FEC /* Storyboard.storyboard */; };
 		46B43D1A19608086006F6FEC /* PGColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B43D1919608086006F6FEC /* PGColorPickerView.m */; };
 		46FF4F7A195B6EE20098214F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FF4F79195B6EE20098214F /* Foundation.framework */; };
 		46FF4F7C195B6EE20098214F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FF4F7B195B6EE20098214F /* CoreGraphics.framework */; };
@@ -16,15 +17,15 @@
 		46FF4F86195B6EE20098214F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 46FF4F84195B6EE20098214F /* InfoPlist.strings */; };
 		46FF4F88195B6EE20098214F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FF4F87195B6EE20098214F /* main.m */; };
 		46FF4F8C195B6EE20098214F /* PGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FF4F8B195B6EE20098214F /* PGAppDelegate.m */; };
-		46FF4F8F195B6EE20098214F /* Storyboard-iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46FF4F8D195B6EE20098214F /* Storyboard-iPhone.storyboard */; };
 		46FF4F92195B6EE20098214F /* PGBallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FF4F91195B6EE20098214F /* PGBallViewController.m */; };
 		46FF4F95195B6EE20098214F /* PGBallScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FF4F94195B6EE20098214F /* PGBallScene.m */; };
 		46FF4F99195B6EE20098214F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46FF4F98195B6EE20098214F /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		46AC9B111AE2FB6900BD480D /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		46B43D0C195FC6F4006F6FEC /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
-		46B43D131960466F006F6FEC /* Storyboard-iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Storyboard-iPad.storyboard"; sourceTree = "<group>"; };
+		46B43D131960466F006F6FEC /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		46B43D1819608086006F6FEC /* PGColorPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGColorPickerView.h; sourceTree = "<group>"; };
 		46B43D1919608086006F6FEC /* PGColorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGColorPickerView.m; sourceTree = "<group>"; };
 		46FF4F76195B6EE20098214F /* Pong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pong.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,7 +39,6 @@
 		46FF4F89195B6EE20098214F /* Pong-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pong-Prefix.pch"; sourceTree = "<group>"; };
 		46FF4F8A195B6EE20098214F /* PGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGAppDelegate.h; sourceTree = "<group>"; };
 		46FF4F8B195B6EE20098214F /* PGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PGAppDelegate.m; sourceTree = "<group>"; };
-		46FF4F8E195B6EE20098214F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Storyboard-iPhone.storyboard"; sourceTree = "<group>"; };
 		46FF4F90195B6EE20098214F /* PGBallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGBallViewController.h; sourceTree = "<group>"; };
 		46FF4F91195B6EE20098214F /* PGBallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PGBallViewController.m; sourceTree = "<group>"; };
 		46FF4F93195B6EE20098214F /* PGBallScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGBallScene.h; sourceTree = "<group>"; };
@@ -97,8 +97,7 @@
 			children = (
 				46FF4F8A195B6EE20098214F /* PGAppDelegate.h */,
 				46FF4F8B195B6EE20098214F /* PGAppDelegate.m */,
-				46FF4F8D195B6EE20098214F /* Storyboard-iPhone.storyboard */,
-				46B43D131960466F006F6FEC /* Storyboard-iPad.storyboard */,
+				46B43D131960466F006F6FEC /* Storyboard.storyboard */,
 				46FF4F90195B6EE20098214F /* PGBallViewController.h */,
 				46FF4F91195B6EE20098214F /* PGBallViewController.m */,
 				46B43D1819608086006F6FEC /* PGColorPickerView.h */,
@@ -106,6 +105,7 @@
 				46FF4F93195B6EE20098214F /* PGBallScene.h */,
 				46FF4F94195B6EE20098214F /* PGBallScene.m */,
 				46FF4F98195B6EE20098214F /* Images.xcassets */,
+				46AC9B111AE2FB6900BD480D /* Launch Screen.xib */,
 				46FF4F82195B6EE20098214F /* Supporting Files */,
 			);
 			path = Pong;
@@ -151,6 +151,11 @@
 				CLASSPREFIX = PG;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = GRL5;
+				TargetAttributes = {
+					46FF4F75195B6EE20098214F = {
+						DevelopmentTeam = 8ZTTS3HC8X;
+					};
+				};
 			};
 			buildConfigurationList = 46FF4F71195B6EE20098214F /* Build configuration list for PBXProject "Pong" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -176,9 +181,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				46FF4F86195B6EE20098214F /* InfoPlist.strings in Resources */,
-				46B43D141960466F006F6FEC /* Storyboard-iPad.storyboard in Resources */,
+				46AC9B121AE2FB6900BD480D /* Launch Screen.xib in Resources */,
+				46B43D141960466F006F6FEC /* Storyboard.storyboard in Resources */,
 				46FF4F99195B6EE20098214F /* Images.xcassets in Resources */,
-				46FF4F8F195B6EE20098214F /* Storyboard-iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,14 +211,6 @@
 				46FF4F85195B6EE20098214F /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		46FF4F8D195B6EE20098214F /* Storyboard-iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				46FF4F8E195B6EE20098214F /* Base */,
-			);
-			name = "Storyboard-iPhone.storyboard";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -293,12 +290,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pong/Pong-Prefix.pch";
 				INFOPLIST_FILE = "Pong/Pong-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -310,12 +307,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pong/Pong-Prefix.pch";
 				INFOPLIST_FILE = "Pong/Pong-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";

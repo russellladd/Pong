@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="kS4-JD-jek">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGx-SX-AtL">
+                    <rect key="frame" x="534" y="0.0" width="66" height="66"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="66" id="XIs-fy-5S2"/>
+                        <constraint firstAttribute="height" constant="66" id="x8I-AF-xEY"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="AddFriend">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJH-R0-1I6">
+                    <rect key="frame" x="0.0" y="0.0" width="66" height="66"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="66" id="76u-vH-Lhl"/>
+                        <constraint firstAttribute="height" constant="66" id="OcA-dg-ojk"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="ColorDrop">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="QGx-SX-AtL" firstAttribute="top" secondItem="kS4-JD-jek" secondAttribute="top" id="4sI-2m-rNl"/>
+                <constraint firstItem="jJH-R0-1I6" firstAttribute="top" secondItem="kS4-JD-jek" secondAttribute="top" id="KSl-TH-ePg"/>
+                <constraint firstAttribute="trailing" secondItem="QGx-SX-AtL" secondAttribute="trailing" id="bdc-SU-BdS"/>
+                <constraint firstItem="jJH-R0-1I6" firstAttribute="leading" secondItem="kS4-JD-jek" secondAttribute="leading" id="fdO-z1-Ihi"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="AddFriend" width="22" height="22"/>
+        <image name="ColorDrop" width="22" height="22"/>
+    </resources>
+</document>

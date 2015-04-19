@@ -14,16 +14,19 @@
 @import SpriteKit;
 
 NSString *const PGBallViewControllerColorKey = @"com.GilbertLadd.PGBallViewControllerColor";
+NSString *const PGBallViewControllerPeerIDKey = @"com.GilbertLadd.PGBallViewControllerPeerID";
+
+NSString *const PGBallViewControllerServiceType = @"grl5-balls";
 
 @import MultipeerConnectivity;
 
-@interface PGBallViewController () <MCBrowserViewControllerDelegate, MCSessionDelegate, PGBallSceneDelegate>
+@interface PGBallViewController () <MCSessionDelegate, MCBrowserViewControllerDelegate, PGBallSceneDelegate>
 
 @property (nonatomic, strong) UIColor *color;
 
-@property (nonatomic) BOOL connectedToPeer;
+@property (nonatomic) MCSessionState sessionState;
 
-@property (nonatomic, strong) MCPeerID *localPeer;
+@property (nonatomic, strong, readonly) MCPeerID *localPeer;
 
 @property (nonatomic, strong) MCSession *session;
 
@@ -32,6 +35,7 @@ NSString *const PGBallViewControllerColorKey = @"com.GilbertLadd.PGBallViewContr
 
 @property (nonatomic, weak) IBOutlet PGColorPickerView *colorPickerView;
 @property (nonatomic, weak) IBOutlet UIButton *addFriendButton;
+@property (nonatomic, weak) IBOutlet UIActivityIndicatorView *connectingIndicator;
 
 @property (nonatomic, readonly) SKView *skView;
 @property (nonatomic, strong) PGBallScene *ballScene;
@@ -52,7 +56,7 @@ NSString *const PGBallViewControllerColorKey = @"com.GilbertLadd.PGBallViewContr
         
         if (!_color) _color = [UIColor colorWithRed:0.88 green:0.34 blue:0.88 alpha:1.0];
         
-        [self startNewSession];
+        [self startSession];
     }
     
     return self;
@@ -60,7 +64,7 @@ NSString *const PGBallViewControllerColorKey = @"com.GilbertLadd.PGBallViewContr
 
 - (void)dealloc
 {
-    [self endCurrentSession];
+    [self stopSession];
 }
 
 #pragma mark - Model
@@ -72,6 +76,7 @@ NSString *const PGBallViewControllerColorKey = @"com.GilbertLadd.PGBallViewContr
         _color = color;
         
         [self updateViewTintColor];
+        [self updateConnectingIndicatorColor];
         
         [self saveColor];
     }
@@ -98,41 +103,67 @@ NSString *const PGBallViewControllerColorKey = @"com.GilbertLadd.PGBallViewContr
     return color;
 }
 
-- (void)setConnectedToPeer:(BOOL)connectedToPeer
+- (void)setSessionState:(MCSessionState)sessionState
 {
-    if (_connectedToPeer != connectedToPeer) {
+    if (_sessionState != sessionState) {
         
-        _connectedToPeer = connectedToPeer;
+        _sessionState = sessionState;
         
-        self.ballScene.connectedToPeer = _connectedToPeer;
+        self.ballScene.connectedToPeer = (_sessionState == MCSessionStateConnected);
         
         [self updateAddFriendButtonImage];
+        [self updateConnectingIndicatorVisible];
     }
+}
+
+@synthesize localPeer = _localPeer;
+
+- (MCPeerID *)localPeer {
+    
+    if (!_localPeer) {
+        
+        NSData *data = [[NSUserDefaults standardUserDefaults] dataForKey:PGBallViewControllerPeerIDKey];
+        
+        NSString *deviceName = [[UIDevice currentDevice] name];
+        
+        if (data) {
+            
+            _localPeer = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+            
+        }
+        
+        if (!data || ![_localPeer.displayName isEqualToString:deviceName]) {
+            
+            _localPeer = [[MCPeerID alloc] initWithDisplayName:deviceName];
+            
+            data = [NSKeyedArchiver archivedDataWithRootObject:_localPeer];
+            
+            [[NSUserDefaults standardUserDefaults] setObject:data forKey:PGBallViewControllerPeerIDKey];
+        }
+    }
+    
+    return _localPeer;
 }
 
 #pragma mark - Session
 
-- (void)endCurrentSession
+- (void)startSession
+{
+    self.session = [[MCSession alloc] initWithPeer:self.localPeer];
+    self.session.delegate = self;
+    
+    self.advertiserAssistant = [[MCAdvertiserAssistant alloc] initWithServiceType:PGBallViewControllerServiceType discoveryInfo:nil session:self.session];
+    
+    [self.advertiserAssistant start];
+}
+
+- (void)stopSession
 {
     [self.advertiserAssistant stop];
     self.advertiserAssistant = nil;
     
     self.session.delegate = nil;
     self.session = nil;
-    
-    self.localPeer = nil;
-}
-
-- (void)startNewSession
-{
-    self.localPeer = [[MCPeerID alloc] initWithDisplayName:[[UIDevice currentDevice] name]];
-    
-    self.session = [[MCSession alloc] initWithPeer:self.localPeer];
-    self.session.delegate = self;
-    
-    self.advertiserAssistant = [[MCAdvertiserAssistant alloc] initWithServiceType:@"grl5-balls" discoveryInfo:nil session:self.session];
-    
-    [self.advertiserAssistant start];
 }
 
 #pragma mark - View life cycle
@@ -157,7 +188,7 @@ NSString *const PGBallViewControllerColorKey = @"com.GilbertLadd.PGBallViewContr
     // Scene
     
     self.ballScene = [PGBallScene sceneWithSize:self.skView.bounds.size];
-    self.ballScene.delegate = self;
+    self.ballScene.ballDelegate = self;
     
     [self.ballScene createBalls:10 color:self.color];
     
@@ -172,6 +203,7 @@ NSString *const PGBallViewControllerColorKey = @"com.GilbertLadd.PGBallViewContr
     self.view.tintAdjustmentMode = UIViewTintAdjustmentModeNormal;
     
     [self updateViewTintColor];
+    [self updateConnectingIndicatorColor];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -188,22 +220,47 @@ NSString *const PGBallViewControllerColorKey = @"com.GilbertLadd.PGBallViewContr
     [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
 }
 
-#pragma mark - View tint color
+#pragma mark - View color
 
 - (void)updateViewTintColor
 {
     self.view.tintColor = self.color;
 }
 
+- (void)updateConnectingIndicatorColor
+{
+    self.connectingIndicator.color = self.color;
+}
+
 #pragma mark - Add friend button
 
 - (void)updateAddFriendButtonImage
 {
-    NSString *imageName = _connectedToPeer ? @"Eject" : @"AddFriend";
+    UIImage *image;
     
-    UIImage *image = [[UIImage imageNamed:imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    switch (self.sessionState) {
+        case MCSessionStateNotConnected:
+            image = [UIImage imageNamed:@"AddFriend"];
+            break;
+            
+        case MCSessionStateConnected:
+            image = [UIImage imageNamed:@"Eject"];
+            break;
+            
+        default:
+            break;
+    }
     
     [self.addFriendButton setImage:image forState:UIControlStateNormal];
+}
+
+- (void)updateConnectingIndicatorVisible {
+    
+    if (self.sessionState == MCSessionStateConnecting) {
+        [self.connectingIndicator startAnimating];
+    } else {
+        [self.connectingIndicator stopAnimating];
+    }
 }
 
 #pragma mark - Touch
@@ -259,11 +316,11 @@ NSString *const PGBallViewControllerColorKey = @"com.GilbertLadd.PGBallViewContr
 {
     [self.colorPickerView setExpanded:NO animated:YES];
     
-    if (self.connectedToPeer) {
+    if (self.sessionState == MCSessionStateConnected) {
         
         [self.session disconnect];
         
-    } else {
+    } else if (self.sessionState == MCSessionStateNotConnected) {
         
         MCBrowserViewController *browserViewController = [[MCBrowserViewController alloc] initWithServiceType:@"grl5-balls" session:self.session];
         browserViewController.maximumNumberOfPeers = 2;
@@ -293,19 +350,12 @@ NSString *const PGBallViewControllerColorKey = @"com.GilbertLadd.PGBallViewContr
 {
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         
-        if (state == MCSessionStateConnected) {
-            
-            self.connectedToPeer = YES;
+        if (state == MCSessionStateConnected || state == MCSessionStateConnecting) {
             
             [self dismissViewControllerAnimated:YES completion:NULL];
-            
-        } else if (state == MCSessionStateNotConnected) {
-            
-            self.connectedToPeer = NO;
-            
-            [self endCurrentSession];
-            [self startNewSession];
         }
+        
+        self.sessionState = state;
     }];
 }
 

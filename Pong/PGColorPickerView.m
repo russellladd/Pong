@@ -54,7 +54,7 @@ CGFloat const PGColorViewSideLengthShort = 44.0;
     colorDropButton.frame = CGRectMake(0.0, 0.0, PGColorViewSideLengthLong, PGColorViewSideLengthLong);
     colorDropButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
     
-    UIImage *colorDropImage = [[UIImage imageNamed:@"ColorDrop"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    UIImage *colorDropImage = [UIImage imageNamed:@"ColorDrop"];
     
     [colorDropButton setImage:colorDropImage forState:UIControlStateNormal];
     
@@ -83,8 +83,8 @@ CGFloat const PGColorViewSideLengthShort = 44.0;
         colorButton.alpha = 0.0;
         colorButton.tintColor = color;
         
-        UIImage *colorCircleImage = [[UIImage imageNamed:@"ColorCircle"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        UIImage *colorCircleSelectedImage = [[UIImage imageNamed:@"ColorCircleSelected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        UIImage *colorCircleImage = [UIImage imageNamed:@"ColorCircle"];
+        UIImage *colorCircleSelectedImage = [UIImage imageNamed:@"ColorCircleSelected"];
         
         [colorButton setImage:colorCircleImage forState:UIControlStateNormal];
         [colorButton setImage:colorCircleSelectedImage forState:UIControlStateHighlighted];

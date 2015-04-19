@@ -24,10 +24,14 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>Launch Screen</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Storyboard-iPhone</string>
-	<key>UIMainStoryboardFile~ipad</key>
-	<string>Storyboard-iPad</string>
+	<string>Storyboard</string>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>com.GilbertLadd.Pour.connecting</string>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

@@ -26,6 +26,6 @@ extern NSString *const PGBallSceneBallNodeName;
 - (void)dropLostBallWithX:(CGFloat)x velocity:(CGVector)v angularVelocity:(CGFloat)o color:(SKColor *)color;
 - (void)createBallWithPosition:(CGPoint)p velocity:(CGVector)v angularVelocity:(CGFloat)o color:(SKColor *)color;
 
-@property (nonatomic, weak) id<PGBallSceneDelegate> delegate;
+@property (nonatomic, weak) id<PGBallSceneDelegate> ballDelegate;
 
 @end
