@@ -52,7 +52,6 @@ CGFloat const PGColorViewSideLengthShort = 44.0;
     UIButton *colorDropButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
     colorDropButton.frame = CGRectMake(0.0, 0.0, PGColorViewSideLengthLong, PGColorViewSideLengthLong);
-    colorDropButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
     
     UIImage *colorDropImage = [UIImage imageNamed:@"ColorDrop"];
     

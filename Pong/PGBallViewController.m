@@ -109,6 +109,8 @@ NSString *const PGBallViewControllerServiceType = @"grl5-balls";
         
         _sessionState = sessionState;
         
+        [self updateAdvertising];
+        
         self.ballScene.connectedToPeer = (_sessionState == MCSessionStateConnected);
         
         [self updateAddFriendButtonImage];
@@ -164,6 +166,15 @@ NSString *const PGBallViewControllerServiceType = @"grl5-balls";
     
     self.session.delegate = nil;
     self.session = nil;
+}
+
+- (void)updateAdvertising {
+    
+    if (self.sessionState == MCSessionStateConnected) {
+        [self.advertiserAssistant stop];
+    } else {
+        [self.advertiserAssistant start];
+    }
 }
 
 #pragma mark - View life cycle
